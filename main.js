@@ -252,3 +252,32 @@ Vue.component('product-tabs', {
      </div>
      
 `,
+    data() {
+        return {
+            tabs: ['Reviews', 'Make a Review', 'Shipping', 'Details'],
+            selectedTab: 'Reviews'  // устанавливается с помощью @click
+        }
+    },
+    props: {
+
+        reviews: {
+            type: Array,
+            required: false,
+        },
+
+        premium: {
+            type: Boolean,
+            required: true
+        }
+    },
+    computed: {
+
+        shipping() {
+            if (this.premium) {
+                return "Free";
+            } else {
+                return 2.99
+            }
+        }
+    }
+})
