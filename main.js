@@ -297,4 +297,3 @@ let app = new Vue({
         },
     },
 })
-
